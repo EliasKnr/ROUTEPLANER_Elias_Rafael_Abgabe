@@ -1,0 +1,75 @@
+<Window x:Class="RoutePlaner_Rafael_elias.AddTourWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoutePlaner_Rafael_elias"
+        xmlns:gm="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
+        mc:Ignorable="d"
+        Title="AddTourWindow" Height="600" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Labels and TextBoxes for Tour Details -->
+        <Label Grid.Row="0" Grid.Column="0" Content="Name"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Width="300"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="From"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding From, UpdateSourceTrigger=PropertyChanged}" Width="300"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="To"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding To, UpdateSourceTrigger=PropertyChanged}" Width="300"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Description"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" Width="300"/>
+
+        <!-- Updated: ComboBox for RouteType -->
+        <Label Grid.Row="4" Grid.Column="0" Content="RouteType"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding RouteTypes}" SelectedItem="{Binding RouteType, UpdateSourceTrigger=PropertyChanged}" Width="300"/>
+
+        <!-- Map Control for Selecting Points -->
+        <gm:GMapControl x:Name="MapControl"
+                        Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"
+                        MinZoom="2"
+                        MaxZoom="17"
+                        Zoom="5"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Height="300"/>
+
+        <!-- Text Boxes for Coordinates -->
+        <Label Grid.Row="6" Grid.Column="0" Content="Start Latitude"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding StartLatitude, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="7" Grid.Column="0" Content="Start Longitude"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding StartLongitude, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="8" Grid.Column="0" Content="End Latitude"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding EndLatitude, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="9" Grid.Column="0" Content="End Longitude"/>
+        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding EndLongitude, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!-- Add Tour Button -->
+        <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Command="{Binding AddTourCommand}" Content="Add Tour"/>
+    </Grid>
+</Window>

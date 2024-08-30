@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GMap.NET.Core" Version="2.1.7" />
+    <PackageReference Include="GMap.NET.Presentation" Version="1.7.5" />
+    <PackageReference Include="GMap.NET.WinPresentation" Version="2.1.7" />
+    <PackageReference Include="Hermes.Vendors.MapControl" Version="1.0.0.1" />
+    <PackageReference Include="itext7" Version="8.0.5" />
+    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.5" />
+    <PackageReference Include="log4net" Version="3.0.0-preview.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.18" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.18" />
+    <PackageReference Include="RestSharp" Version="111.4.1" />
+    <PackageReference Include="xunit" Version="2.9.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.0-pre.24">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Xunit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RoutePlaner_Rafael_elias\RoutePlaner_Rafael_elias.csproj" />
+    </ItemGroup>
+
+</Project>
